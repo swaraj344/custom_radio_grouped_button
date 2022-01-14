@@ -176,7 +176,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
           child: Container(
             height: widget.height,
             child: MaterialButton(
-               padding: childPadding,
+               padding: widget.childPadding,
               shape: widget.enableShape
                   ? widget.customShape == null
                       ? OutlineInputBorder(

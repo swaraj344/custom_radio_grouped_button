@@ -28,6 +28,7 @@ class CustomRadioButton<T> extends StatefulWidget {
     this.absoluteZeroSpacing = false,
     this.margin,
     this.wrapAlignment = WrapAlignment.start,
+    this.childPadding,
     required this.value
   })  : assert(buttonLables.length == buttonValues.length,
             "Button values list and button lables list should have same number of eliments "),
@@ -119,6 +120,8 @@ class CustomRadioButton<T> extends StatefulWidget {
   /// Radius for shape radio button
   final double shapeRadius;
 
+  EdgeInsetsGeometry? childPadding;
+
   _CustomRadioButtonState createState() => _CustomRadioButtonState();
 }
 
@@ -173,6 +176,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
           child: Container(
             height: widget.height,
             child: MaterialButton(
+               padding: childPadding,
               shape: widget.enableShape
                   ? widget.customShape == null
                       ? OutlineInputBorder(

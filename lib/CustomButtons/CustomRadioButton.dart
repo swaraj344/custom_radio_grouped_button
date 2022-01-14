@@ -197,7 +197,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 widget.buttonLables[index],
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 1,
+                maxLines: 2,
                 style: widget.buttonTextStyle.textStyle?.copyWith(
                   color: _currentSelectedLabel == widget.buttonLables[index]
                       ? widget.buttonTextStyle.selectedColor
@@ -257,7 +257,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
               widget.buttonLables[index],
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,
-              maxLines: 1,
+              maxLines: 2,
               style: widget.buttonTextStyle.textStyle?.copyWith(
                 color: _currentSelectedLabel == widget.buttonLables[index]
                     ? widget.buttonTextStyle.selectedColor

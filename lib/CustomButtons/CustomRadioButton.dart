@@ -28,6 +28,7 @@ class CustomRadioButton<T> extends StatefulWidget {
     this.absoluteZeroSpacing = false,
     this.margin,
     this.wrapAlignment = WrapAlignment.start,
+    required this.value
   })  : assert(buttonLables.length == buttonValues.length,
             "Button values list and button lables list should have same number of eliments "),
         // assert(unSelectedColor != null, "Unselected color cannot be null"),
@@ -45,6 +46,9 @@ class CustomRadioButton<T> extends StatefulWidget {
       this.spacing = spacing;
     }
   }
+
+  final ValueNotifier<String?> value;
+  
 
   ///Orientation of the Button Group
   final bool horizontal;
@@ -130,6 +134,13 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
   @override
   void initState() {
     super.initState();
+
+    widget.value.addListener(() {
+      setState(() {
+        _currentSelectedLabel = null;
+      });
+    });
+
     if (widget.defaultSelected != null) {
       if (widget.buttonValues.contains(widget.defaultSelected)) {
         int index = widget.buttonValues.indexOf(widget.defaultSelected);
